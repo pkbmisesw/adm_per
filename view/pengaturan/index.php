@@ -72,15 +72,15 @@ include '../sidebar.php';
                     <div class="">
                         <div class="card">
                             <div class="card-header px-4 py-3">
-                                <h5 class="mb-0">Bootstrap Validation</h5>
+                                <h5 class="mb-0">Pengaturan</h5>
                             </div>
                             <div class="card-body p-4">
                                 <?php
-                $sql = "SELECT * FROM setting ORDER BY id DESC";
-                $stmt = $conn->prepare($sql);
-                $stmt->execute();
-                $row = $stmt->fetch();
-                ?>
+                                $sql = "SELECT * FROM setting ORDER BY id DESC";
+                                $stmt = $conn->prepare($sql);
+                                $stmt->execute();
+                                $row = $stmt->fetch();
+                                ?>
 
                                 <form class="row g-3 needs-validation" novalidate
                                     action="../../controller/<?php echo $dba;?>_controller.php?op=edit" method="post"
@@ -100,16 +100,151 @@ include '../sidebar.php';
                                     </div>
                                     <div class="col-md-12">
                                         <label for="bsValidation13" class="form-label">Keterangan</label>
-                                        <textarea class="form-control" id="bsValidation13" placeholder="Keterangan"
-                                            rows="3" name="des" value="<?php echo $row['des']; ?>"></textarea>
+                                        <textarea class="form-control" placeholder="description" name="des"><?php echo $row['des']; ?></textarea>
                                         <div class="invalid-feedback">
                                             Inputkan Keterangan
                                         </div>
                                     </div>
                                     <div class="col-md-12">
+                                        <label for="bsValidation13" class="form-label">Alamat</label>
+                                        <input type="text" class="form-control" placeholder="Alamat" name="alamat" value="<?php echo $row['alamat']; ?>">
+                                        <div class="invalid-feedback">
+                                            Inputkan Alamat
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="bsValidation13" class="form-label">Running Text</label>
+                                        <input type="text" class="form-control" placeholder="Running Text" name="run_text" value="<?php echo $row['run_text']; ?>">
+                                        <div class="invalid-feedback">
+                                            Inputkan Running Text
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="bsValidation13" class="form-label">Nomor Wa</label>
+                                        <input type="text" class="form-control" placeholder="6285280000000" name="wa" value="<?php echo $row['wa']; ?>">
+                                        <div class="invalid-feedback">
+                                            Inputkan Nomor Wa
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="bsValidation13" class="form-label">Kalimat Wa</label>
+                                        <input type="text" class="form-control" placeholder="Kalimat Wa" name="kata_wa" value="<?php echo $row['kata_wa']; ?>">
+                                        <div class="invalid-feedback">
+                                            Inputkan Kalimat Wa
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="bsValidation13" class="form-label">SEO</label>
+                                        <input type="text" class="form-control" placeholder="keyword" name="seo" value="<?php echo $row['seo']; ?>">
+                                        <div class="invalid-feedback">
+                                            Inputkan SEO
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="bsValidation13" class="form-label">Email</label>
+                                        <input type="text" class="form-control" placeholder="email" name="email" value="<?php echo $row['email']; ?>">
+                                        <div class="invalid-feedback">
+                                            Inputkan Email
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="bsValidation13" class="form-label">Youtube Link</label>
+                                        <input type="text" class="form-control" placeholder="youtube" name="yt" value="<?php echo $row['yt']; ?>">
+                                        <div class="invalid-feedback">
+                                            Inputkan Youtube Link
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="bsValidation13" class="form-label">Warna</label>
+                                        <input type="text" class="form-control" placeholder="warna" name="warna" value="<?php echo $row['warna']; ?>">
+                                        <div class="invalid-feedback">
+                                            Inputkan Warna
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="bsValidation13" class="form-label">Neon Warna</label>
+                                        <input type="text" class="form-control" placeholder="neon warna" name="neon" value="<?php echo $row['neon']; ?>">
+                                        <div class="invalid-feedback">
+                                            Inputkan Neon Warna
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="bsValidation13" class="form-label">Skin</label>
+                                        <input type="text" class="form-control" placeholder="skin" name="skin" value="<?php echo $row['skin']; ?>">
+                                        <small>* blue, blue-light, yellow, yellow-light, green,	green-light, purple,	purple-light, red,	red-light, black,  black-light,</small>
+                                        <div class="invalid-feedback">
+                                            Inputkan Neon Warna
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <label for="bsValidation13" class="form-label">Pilihan Posisi Web</label>
+                                        <div class="row">
+                                            <div class="col">
+                                                <h6 style="color:red;">Atur Posisi Ketika Tampilan Website Pertama Kali dibuka Copy Paste nama php warna hitam dibagian bawah dan isi bagian tersebut sesuai keinginan</h6>
+                                                
+                                                <a class="text-primary">1. Slide - </a>w_slide.php<br>
+                                                <a class="text-primary">2. Konten - </a>w_konten.php<br>
+                                                <a class="text-primary">3. Video - </a>w_video.php<br>
+                                                <a class="text-primary">4. Tentang - </a>w_tentang.php<br>
+                                                <a class="text-primary">5. Populer - </a>w_populer.php<br>
+                                                <a class="text-primary">6. Berita - </a>w_berita.php<br>
+                                                <a class="text-primary">7. Mitra - </a>w_mitra.php<br>
+                                                <a class="text-primary">8. RunText - </a>w_run.php<br>
+                                                <a class="text-primary">9. Berita2 - </a>w_beritab.php<br>
+                                                <a class="text-primary">10. Total - </a>w_total.php<br>  
+
+                                            </div>       
+                                        </div>                                        
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <label for="bsValidation13" class="form-label">Posisi Satu</label>
+                                        <input type="text" class="form-control" placeholder="s_satu" name="s_satu" value="<?php echo $row['s_satu']; ?>">
+                                        <div class="invalid-feedback">
+                                            Inputkan Posisi Satu
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="bsValidation13" class="form-label">Posisi Dua</label>
+                                        <input type="text" class="form-control" placeholder="s_dua" name="s_dua" value="<?php echo $row['s_dua']; ?>">
+                                        <div class="invalid-feedback">
+                                            Inputkan Posisi Dua
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="bsValidation13" class="form-label">Posisi Tiga</label>
+                                        <input type="text" class="form-control" placeholder="s_tiga" name="s_tiga" value="<?php echo $row['s_tiga']; ?>">
+                                        <div class="invalid-feedback">
+                                            Inputkan Posisi Tiga
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="bsValidation13" class="form-label">Posisi Empat</label>
+                                        <input type="text" class="form-control" placeholder="s_empat" name="s_empat" value="<?php echo $row['s_empat']; ?>">
+                                        <div class="invalid-feedback">
+                                            Inputkan Posisi Empat
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="bsValidation13" class="form-label">Posisi Lima</label>
+                                        <input type="text" class="form-control" placeholder="s_lima" name="s_lima" value="<?php echo $row['s_lima']; ?>">
+                                        <div class="invalid-feedback">
+                                            Inputkan Posisi Lima
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="bsValidation13" class="form-label">Posisi Enam</label>
+                                        <input type="text" class="form-control" placeholder="s_enam" name="s_enam" value="<?php echo $row['s_enam']; ?>">
+                                        <div class="invalid-feedback">
+                                            Inputkan Posisi Enam
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
                                         <div class="d-md-flex d-grid align-items-center gap-3">
-                                            <button type="submit" class="btn btn-primary px-4">Submit</button>
-                                            <button type="reset" class="btn btn-light px-4">Reset</button>
+                                            <button type="submit" class="btn btn-primary px-4">Update</button>
+                                            
                                         </div>
                                     </div>
                                 </form>

@@ -29,7 +29,7 @@
 			echo "<script>alert('Gagal Tambah'); document.location.href=('../view/m_satuan')</script>";
 		}
 	
-	} if($op == "daftar"){
+	}else if($op == "daftar"){
 		$name = mysqli_real_escape_string($link, $_POST['name']);
 		$stat = mysqli_real_escape_string($link, $_POST['stat']);
 		$gender = mysqli_real_escape_string($link, $_POST['gender']);

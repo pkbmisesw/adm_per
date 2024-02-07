@@ -6,6 +6,11 @@ if (strpos($currentUrl, 'view/m_user/') !== false) {
 } else {
     $userActive = '';
 }
+if (strpos($currentUrl, 'view/pengaturan/') !== false) {
+    $pengaturanActive = 'class="mm-active"';
+} else {
+    $pengaturanActive = '';
+}
 ?>
 
 <div class="sidebar-wrapper" data-simplebar="true">
@@ -194,13 +199,14 @@ if (strpos($currentUrl, 'view/m_user/') !== false) {
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li <?php echo $pengaturanActive ?>>
 					<a href="../pengaturan" >
 						<div class="parent-icon"><i class='bx bx-cog' ></i>
 						</div>
 						<div class="menu-title">Pengaturan</div>
 					</a>
 				</li>
+				
 				<li>
 					<a href="../../logout.php" >
 						<div class="parent-icon"><i class='bx bx-log-out-circle'></i>
