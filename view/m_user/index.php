@@ -13,7 +13,7 @@ if( $_SESSION['level_id'] == "1" ){
   echo "<script>alert('Maaf! anda tidak bisa mengakses halaman ini '); document.location.href='../admin/'</script>";
 }
 
-$master = "Data Pegawai";
+$master = "Users";
 $dba = "user";
 $ket = "";
 $ketnama = "Silahkan mengisi nama";
