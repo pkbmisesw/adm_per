@@ -2,9 +2,9 @@
 $currentUrl = $_SERVER['REQUEST_URI'];
 // Check if the URL contains "view/m_user/"
 if (strpos($currentUrl, 'view/m_user/') !== false) {
-    $mmActiveClass = 'class="mm-active"';
+    $userActive = 'class="mm-active"';
 } else {
-    $mmActiveClass = '';
+    $userActive = '';
 }
 ?>
 
@@ -34,24 +34,163 @@ if (strpos($currentUrl, 'view/m_user/') !== false) {
 						</li>
 					</ul>
 				</li>
-				<li class="menu-label">Others</li>
+				<li class="menu-label">Main Navigation</li>
 				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-book-content' ></i>
+						</div>
+						<div class="menu-title">Master Pages</div>
+					</a>
+					<ul>
+						<li > 
+ 						    <a href="#">
+								<i class='bx bx-radio-circle'></i>
+								Pages
+							</a>
+						</li>
+						<li > 
+ 						    <a href="#">
+								<i class='bx bx-radio-circle'></i>
+								Sub Pages
+							</a>
+						</li>
+						<li > 
+ 						    <a href="#">
+								<i class='bx bx-radio-circle'></i>
+								Post
+							</a>
+						</li>
+						
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-data' ></i>
+						</div>
+						<div class="menu-title">Master Data</div>
+					</a>
+					<ul>
+						<li > 
+ 						    <a href="#">
+								<i class='bx bx-radio-circle'></i>
+								Data Umum
+							</a>
+						</li>
+						<li > 
+ 						    <a href="#">
+								<i class='bx bx-radio-circle'></i>
+								Data Pokja 1
+							</a>
+						</li>
+						<li > 
+ 						    <a href="#">
+								<i class='bx bx-radio-circle'></i>
+								Data Pokja 2
+							</a>
+						</li>
+						<li > 
+ 						    <a href="#">
+								<i class='bx bx-radio-circle'></i>
+								Data Pokja 3
+							</a>
+						</li>
+						<li > 
+ 						    <a href="#">
+								<i class='bx bx-radio-circle'></i>
+								Data Pokja 4
+							</a>
+						</li>
+						<li > 
+ 						    <a href="#">
+								<i class='bx bx-radio-circle'></i>
+								Data Rekap
+							</a>
+						</li>
+						
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-file'></i>
+						</div>
+						<div class="menu-title">Master Surat</div>
+					</a>
+					<ul>
+						<li > 
+ 						    <a href="#">
+								<i class='bx bx-radio-circle'></i>
+								Semua Surat
+							</a>
+						</li>
+						
+					</ul>
+				</li>
+				
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-laptop'></i>
+						</div>
+						<div class="menu-title">Master Asset</div>
+					</a>
+					<ul>
+						<li > 
+ 						    <a href="#">
+								<i class='bx bx-radio-circle'></i>
+								Barang
+							</a>
+						</li>
+						
+					</ul>
+				</li>
+				<li class="menu-label">Pengaturan</li>
+				<!-- <li>
 					<a href="../m_user/">
 						<div class="parent-icon"><i class="bx bx-folder"></i>
 						</div>
 						<div class="menu-title">Data Pegawai</div>
 					</a>
-				</li>
-				<li <?php echo $mmActiveClass ?> >
+				</li> -->
+				<li <?php echo $userActive ?> >
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="bx bx-folder"></i>
+						<div class="parent-icon"><i class='bx bxs-group' ></i>
 						</div>
 						<div class="menu-title">Master Pengguna</div>
 					</a>
 					<ul>
 						<li> <a href="#"><i class='bx bx-radio-circle'></i>Pengurus</a>
 						</li>
-						<li <?php echo $mmActiveClass ?>> <a href="../m_user"><i class='bx bx-radio-circle'></i>Pengguna</a>
+						<li <?php echo $userActive ?>> 
+							<a href="../m_user">
+								<i class='bx bx-radio-circle'></i>
+								Pengguna
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-group' ></i>
+						</div>
+						<div class="menu-title">Master Admin</div>
+					</a>
+					<ul>
+						<li > 
+ 						    <a href="#">
+								<i class='bx bx-radio-circle'></i>
+								Admin Kota
+							</a>
+						</li>
+						<li > 
+ 						    <a href="#">
+								<i class='bx bx-radio-circle'></i>
+								Admin Kecamatan
+							</a>
+						</li>
+						<li > 
+ 						    <a href="#">
+								<i class='bx bx-radio-circle'></i>
+								Admin Kelurahan
+							</a>
 						</li>
 					</ul>
 				</li>
