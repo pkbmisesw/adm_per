@@ -53,9 +53,9 @@
         }
         
         if($stmt){		
-			echo "<script>alert('Berhasil Tambah'); document.location.href=('../views/m_user')</script>";
+			echo "<script>alert('Berhasil Tambah'); document.location.href=('../view/m_user')</script>";
 		}else{
-			echo "<script>alert('Gagal Tambah'); document.location.href=('../views/m_user')</script>";
+			echo "<script>alert('Gagal Tambah'); document.location.href=('../view/m_user')</script>";
 		}
 	
 	} if($op == "daftar"){
@@ -111,9 +111,9 @@
         }
         
         if($stmt){		
-			echo "<script>alert('Password telah dirubah'); document.location.href=('../views/m_user')</script>";
+			echo "<script>alert('Password telah dirubah'); document.location.href=('../view/m_user')</script>";
 		}else{
-			echo "<script>alert('Gagal Data telah dirubah'); document.location.href=('../views/m_user')</script>";
+			echo "<script>alert('Gagal Data telah dirubah'); document.location.href=('../view/m_user')</script>";
 		}
 
 	}else if($op == "aktif"){
@@ -138,9 +138,9 @@
             }
             
             if($stmt){		
-    			echo "<script>alert('Data telah dirubah'); document.location.href=('../views/m_user')</script>";
+    			echo "<script>alert('Data telah dirubah'); document.location.href=('../view/m_user')</script>";
     		}else{
-    			echo "<script>alert('Gagal Data telah dirubah'); document.location.href=('../views/m_user')</script>";
+    			echo "<script>alert('Gagal Data telah dirubah'); document.location.href=('../view/m_user')</script>";
     		}
 		
 			
@@ -164,9 +164,9 @@
 		$stmt->execute();
 		
 		if($stmt){		
-			echo "<script>alert('Berhasil Menghapus'); document.location.href=('../views/m_user/')</script>";
+			echo "<script>alert('Berhasil Menghapus'); document.location.href=('../view/m_user/')</script>";
 		}else{
-			echo "<script>alert('Gagal Menghapus'); document.location.href=('../views/m_user/')</script>";
+			echo "<script>alert('Gagal Menghapus'); document.location.href=('../view/m_user/')</script>";
 		}
 
 	}else if($op=="cek_extensi"){
@@ -186,6 +186,6 @@
 	    
 	    unlink('../../images/PENULIS.png');
 	    
-		echo "<script>alert('Berhasil Menghapus Gambar'); document.location.href=('../views/barang/')</script>";
+		echo "<script>alert('Berhasil Menghapus Gambar'); document.location.href=('../view/barang/')</script>";
 	}
 ?>

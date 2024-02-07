@@ -7,9 +7,9 @@ if(isset($_SESSION['email'])== 0) {
 ?>
 
 <?php 
-include '../partials/footer.php';
-include '../partials/header.php';
-include '../partials/sidebar.php';
+include '../footer.php';
+include '../header.php';
+include '../sidebar.php';
 ?>
 
 

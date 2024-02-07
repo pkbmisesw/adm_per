@@ -84,9 +84,9 @@
         }
         
         if($stmt){		
-			echo "<script>alert('Data telah dirubah'); document.location.href=('../views/pengaturan')</script>";
+			echo "<script>alert('Data telah dirubah'); document.location.href=('../view/pengaturan')</script>";
 		}else{
-			echo "<script>alert('Gagal Data telah dirubah'); document.location.href=('../views/pengaturan')</script>";
+			echo "<script>alert('Gagal Data telah dirubah'); document.location.href=('../view/pengaturan')</script>";
 		}
 
         	

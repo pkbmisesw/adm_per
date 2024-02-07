@@ -3,7 +3,7 @@ error_reporting(0);
 include 'config.php';
 
 if(isset($_SESSION['email'])) {
-  header('Location: views/admin/index.php');
+  header('Location: view/admin/index.php');
   exit;
 }
 
@@ -24,7 +24,7 @@ if(isset($_POST['login'])) {
       $_SESSION['password'] = $row['password'];
       $_SESSION['user_id'] = $row['id'];
       $_SESSION['level_id'] = $row['level_id'];
-      header("Location: views/admin/index.php");
+      header("Location: view/admin/index.php");
       exit;
     } else {
       echo "<div class='notif'>Email or password is incorrect!</div>";

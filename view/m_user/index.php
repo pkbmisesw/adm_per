@@ -20,9 +20,9 @@ $ketnama = "Silahkan mengisi nama";
 ?>
 
 <?php 
-include '../partials/header.php';
-include '../partials/sidebar.php';
-include '../partials/footer.php';
+include '../header.php';
+include '../sidebar.php';
+include '../footer.php';
 ?>
 
 <!doctype html>
