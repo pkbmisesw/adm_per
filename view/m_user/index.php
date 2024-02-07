@@ -77,6 +77,16 @@ include '../footer.php';
 				<hr/>
 				<div class="card">
 					<div class="card-body">
+						<div class="row mb-3">
+							<div class="col">
+								
+
+								<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambah">
+									Tambah
+								</button>
+
+							</div>
+						</div>
 						<div class="table-responsive">
 							<table id="example" class="table table-striped table-bordered" style="width:100%">
 								<thead>
@@ -200,14 +210,79 @@ include '../footer.php';
 		</div>
 	  </div>
     <!-- end search modal -->
+    
 
-
-	<!-- edit modal  -->
-	<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<!-- tambah modal -->
+	<div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="tambahModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Edit </h5>
+				<h5 class="modal-title" id="tambahModalLabel">Tambah <?php echo $master;?></h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<form action="../../controller/<?php echo $dba;?>_controller.php?op=tambah" method="post"  enctype="multipart/form-data" autocomplete="off">
+			<div class="modal-body">
+				
+
+				<div class="form-group mb-2">
+					<label class="col-form-label mb-1">Nik :</label>
+					<input type="text" class="form-control" id="myInput" name="nik" />
+				</div>
+
+				<div class="form-group mb-2">
+					<label class="col-form-label mb-1">Nama :</label>
+					<input type="text" class="form-control"  name="nama" placeholder="<?php echo $ketnama. " ".$master. " ..."; ?>" />
+				</div>
+
+				<div class="form-group mb-2">
+					<label class="col-form-label mb-1">Level_id :</label>
+					<input type="text" class="form-control" name="level_id" />
+				</div>
+
+				<div class="form-group mb-2">
+					<label class="col-form-label mb-1">Email :</label>
+					<input type="text" class="form-control" name="email" />
+				</div>
+
+				<div class="form-group mb-2">
+					<label class="col-form-label mb-1">Password :</label>
+					<input type="password" class="form-control" name="password" />
+				</div>
+
+				<div class="form-group mb-2">
+					<label class="col-form-label mb-1">Status_aktif :</label>
+					<input type="text" class="form-control" name="status_aktif" />
+				</div>
+
+				<div class="form-group mb-2">
+					<label class="col-form-label mb-1">Hp :</label>
+					<input type="text" class="form-control" name="hp" />
+				</div>
+
+				<div class="form-group mb-2">
+					<label class="col-form-label mb-1">Ktp :</label>
+					<input type="text" class="form-control" name="ktp" />
+				</div>
+				
+				
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button  type="submit" name="upload" type="button" class="btn btn-primary" >Save changes</button>
+			</div>
+			</form>
+			</div>
+		</div>
+	</div>
+	<!-- end tambah modal -->
+
+
+	<!-- edit modal  -->
+	<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="editModalLabel">Edit </h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<form id="form-edit-transaksi-masuk">
@@ -392,6 +467,10 @@ include '../footer.php';
 
 	<script type="text/javascript">
      $(document).ready(function(){
+
+		$('#tambah').on('shown.bs.modal', function() {
+			$('#myInput').trigger('focus');
+		});
 
 		$('#edit').on('shown.bs.modal', function() {
 			$('#nik_edit').trigger('focus');
