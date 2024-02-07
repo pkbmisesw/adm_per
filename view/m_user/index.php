@@ -118,7 +118,7 @@ include '../footer.php';
 										<td><?php echo $data['email'];?></td>
 										<td><?php echo $data['status_aktif'];?></td>
 										<td><?php echo $data['hp'];?></td>
-										<td><a href="../../images/<?php echo $data['ktp'];?>">Lihat</a></td>
+										<td><a href="../../images/<?php echo $data['ktp'];?>" target="_blank">Lihat</a></td>
 										<td>
                                         <button 
                       data-id="<?= $data['id'] ?>" 
@@ -129,7 +129,7 @@ include '../footer.php';
                       data-status_aktif="<?= $data['status_aktif']?>"
                       data-hp="<?= $data['hp']?>"
                       data-ktp="<?= $data['ktp']?>"
-                      type="button" class="btn btn-light btn_update" data-toggle="modal" data-bs-target="#edit">✎</button>
+                      type="button" class="btn btn-light btn_update" data-toggle="modal" data-bs-target="#edit" style="width:48.08px;">✎</button>
 
                     <a class="btn btn-light" onclick="return confirm('are you want deleting data')" href="../../controller/<?php echo $dba;?>_controller.php?op=hapus&id=<?php echo $data['id']; ?>">❌</a>
                                         </td>
