@@ -1,3 +1,13 @@
+<?php 
+$currentUrl = $_SERVER['REQUEST_URI'];
+// Check if the URL contains "view/m_user/"
+if (strpos($currentUrl, 'view/m_user/') !== false) {
+    $mmActiveClass = 'class="mm-active"';
+} else {
+    $mmActiveClass = '';
+}
+?>
+
 <div class="sidebar-wrapper" data-simplebar="true">
 			<div class="sidebar-header">
 				<div>
@@ -32,7 +42,7 @@
 						<div class="menu-title">Data Pegawai</div>
 					</a>
 				</li>
-				<li>
+				<li <?php echo $mmActiveClass ?> >
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="bx bx-folder"></i>
 						</div>
@@ -41,7 +51,7 @@
 					<ul>
 						<li> <a href="#"><i class='bx bx-radio-circle'></i>Pengurus</a>
 						</li>
-						<li> <a href="../m_user"><i class='bx bx-radio-circle'></i>Pengguna</a>
+						<li <?php echo $mmActiveClass ?>> <a href="../m_user"><i class='bx bx-radio-circle'></i>Pengguna</a>
 						</li>
 					</ul>
 				</li>
