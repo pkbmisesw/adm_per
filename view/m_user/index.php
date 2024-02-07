@@ -119,7 +119,8 @@ include '../footer.php';
                       data-status_aktif="<?= $data['status_aktif']?>"
                       data-hp="<?= $data['hp']?>"
                       data-ktp="<?= $data['ktp']?>"
-                      type="button" class="btn btn-light btn_update" data-toggle="modal">✎</button>
+                      type="button" class="btn btn-light btn_update" data-toggle="modal" data-bs-target="#edit">✎</button>
+
                     <a class="btn btn-light" onclick="return confirm('are you want deleting data')" href="../../controller/<?php echo $dba;?>_controller.php?op=hapus&id=<?php echo $data['id']; ?>">❌</a>
                                         </td>
 									</tr>
@@ -199,6 +200,69 @@ include '../footer.php';
 		</div>
 	  </div>
     <!-- end search modal -->
+
+
+	<!-- edit modal  -->
+	<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Edit </h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<form id="form-edit-transaksi-masuk">
+
+				<div class="modal-body">
+					<div class="form-group">
+						<input type="hidden" id="id_edit" name="id" />
+
+					<div class="form-group mb-2">
+						<label class="control-label mb-1" >Nik : </label>        
+						<input type="text" class="form-control" id="nik_edit" name="nik" />
+					</div>
+						
+					<div class="form-group mb-2">
+						<label class="control-label mb-1" >Nama : </label>        
+						<input type="text" class="form-control" id="nama_edit" name="nama" />
+					</div>
+					
+					<div class="form-group mb-2">
+						<label class="control-label mb-1" >Level_id : </label>        
+						<input type="text" class="form-control" id="level_id_edit" name="level_id" />
+					</div>
+
+					<div class="form-group mb-2">
+						<label class="control-label mb-1" >Email : </label>        
+						<input type="text" class="form-control" id="email_edit" name="email" />
+					</div>
+
+					<div class="form-group mb-2">
+						<label class="control-label mb-1" >Status_aktif : </label>        
+						<input type="text" class="form-control" id="status_aktif_edit" name="status_aktif" />
+					</div>
+
+					<div class="form-group mb-2">
+						<label class="control-label mb-1" >Hp : </label>        
+						<input type="text" class="form-control" id="hp_edit" name="hp" />
+					</div>
+
+					<div class="form-group mb-2">
+						<label class="control-label mb-1" >Ktp : </label>        
+						<input type="text" class="form-control" id="ktp_edit" name="ktp" />
+					</div>
+					
+					
+				</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" id="btn-save-update">Save changes</button>
+				</div>
+			</form>
+			</div>
+		</div>
+	</div>
+	<!-- end edit modal -->
 
 
 
@@ -325,6 +389,48 @@ include '../footer.php';
 	</script>
 	<!--app JS-->
 	<script src="../../assets/js/app.js"></script>
+
+	<script type="text/javascript">
+     $(document).ready(function(){
+
+		$('#edit').on('shown.bs.modal', function() {
+			$('#nik_edit').trigger('focus');
+		});
+
+		$(document).on('click','.btn_update',function(){
+
+			$("#id_edit").val($(this).attr('data-id'));
+            $("#nik_edit").val($(this).attr('data-nik'));
+            $("#nama_edit").val($(this).attr('data-nama'));
+            $("#level_id_edit").val($(this).attr('data-level_id'));
+            $("#email_edit").val($(this).attr('data-email'));
+            $("#status_aktif_edit").val($(this).attr('data-status_aktif'));
+            $("#hp_edit").val($(this).attr('data-hp'));
+            $("#ktp_edit").val($(this).attr('data-ktp'));
+            $('#edit').modal('show');
+
+		});
+
+		$('#btn-save-update').click(function(){
+           $.ajax({
+               url: "edit.php",
+               type : 'post',
+               data : $('#form-edit-transaksi-masuk').serialize(),
+               success: function(data){
+                   var res = JSON.parse(data);
+                   if (res.code == 200){
+                       alert('Success Update');
+                       location.reload();
+                   }
+               }
+           }) 
+        });
+
+
+	 });
+	 </script>
+
+
 </body>
 
 </html>
